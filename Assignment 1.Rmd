@@ -1,0 +1,26 @@
+---
+title: '726 Assignment #1'
+author: "Chase Schreiner"
+date: "2022-09-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+library(data.table)
+library(rmarkdown)
+install.packages("DataExplorer")
+library(DataExplorer)
+```
+
+```{r}
+FAA_data = read.csv("FAA_wildlife2020.csv")
+```
+
+```{r}
+create_report(FAA_data)
+```

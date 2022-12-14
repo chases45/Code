@@ -1,0 +1,220 @@
+---
+title: "Final Exam"
+author: "Chase Schreiner"
+date: "2022-12-05"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Problem 1
+```{r}
+library(alr4)
+head(Wong)
+help(Wong)
+```
+
+```{r}
+par(mfrow=c(1,2))
+Wong$iq = Wong$piq + Wong$viq
+hist(Wong$iq)
+Wong$logiq = log(Wong$iq, 10)
+hist(Wong$logiq)
+m1.0 = lm(logiq ~ days+duration+sex+age, Wong)
+summary(m1.0)
+plot(m1.0)
+
+Wong$logdur = log(Wong$duration, 10)
+Wong = Wong[,-10]
+
+boxplot(logiq ~ sex, wong1) ## no difference
+
+hist(Wong$days) ## ???
+hist(log(Wong$days,10))
+hist(Wong$duration) ## can't do log duration because some durations are 0, thus log is negative inf.
+
+which(hatvalues(m1.0)>0.25)
+
+wong0 = Wong[c(-305,-330,-331),]
+wong1 = wong0[-328,]
+m1.1 = lm(logiq ~ days+duration+sex+age, wong1)
+summary(m1.1)
+plot(m1.1)
+
+
+m1.11 = lm(logiq ~ log(days,10)+duration, wong1) ## best adj. r-squared
+summary(m1.11)
+
+m1.2 = lm(logiq ~ days*duration+sex+age, wong1) ## significant
+summary(m1.2)
+
+m1.3 = lm(logiq ~ days+duration*age+sex, wong1) ## insignificant
+summary(m1.3)
+
+m1.4 = lm(logiq ~ days*duration, wong1)
+summary(m1.4)
+```
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+```{r}
+
+
+
+```
+
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
+
+
+
+
+```{r}
+
+
+
+```
+
+
+```{r}
+
+
+
+```
+
+
